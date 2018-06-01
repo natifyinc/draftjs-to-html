@@ -332,6 +332,16 @@ function getEntityMarkup(
     const targetOption = entity.data.targetOption || '_self';
     return `<a href="${entity.data.url}" target="${targetOption}">${text}</a>`;
   }
+  if (entity.type === 'CTA_BOX') {
+    const data = entity.data;
+    const targetOption = data.targetOption || '_self';
+    return `
+    <div class="ctabox-root">
+      <h3>${data.ctaTitle}</h3>
+      <p>${data.ctaText}</p>
+      <a href="${data.url}" target="${targetOption}">${data.ctaButtonText}</a>
+    </div>`;
+  }
   if (entity.type === 'IMAGE') {
     return `<img src="${entity.data.src}" alt="${entity.data.alt}" style="float:${entity.data.alignment || 'none'};height: ${entity.data.height};width: ${entity.data.width}"/>`;
   }
