@@ -50,7 +50,7 @@
     {
       "path": "lib/*",
       "webpack": false,
-      "limit": "4.5 KB"
+      "limit": "999 KB"
     }
   ]
 }
